@@ -3,15 +3,24 @@
   <name>Obcity</name>
   <description>Incentivises people to exercise by donating to charities when they fail to meet their goals.</description>
   <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
-    </author>
+    The Locals
+  </author>
   <content src="index.html"/>
+
   <access origin="*"/>
+
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage" value="none"/>
+
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
+  </feature>
+  <feature name="Accelerometer">
+    <param name="ios-package" value="CDVAccelerometer" onload="true"/>
+  </feature>
+  <feature name="Geolocation">
+    <param name="ios-package" value="CDVAccelerometer" onload="true"/>
   </feature>
 </widget>
