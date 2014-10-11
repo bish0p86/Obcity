@@ -79,7 +79,7 @@
                       to: day == 0 ? now : endOfDay
                       toQueue:[NSOperationQueue mainQueue]
                       withHandler:^(NSInteger numberOfSteps, NSError *error) {
-                        NSLog(@"%zd", numberOfSteps);
+                        //NSLog(@"%zd", numberOfSteps);
                         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus : CDVCommandStatus_OK messageAsInt : (int)numberOfSteps];
                         [self.commandDelegate sendPluginResult : pluginResult callbackId : command.callbackId];
                       }];
