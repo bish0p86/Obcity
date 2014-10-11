@@ -1,6 +1,22 @@
 angular.module('starter.services', []).
 
-service('pedometer', [function() {    
+service('pedometer', [function() {
+  if (typeof window.M7StepCounter === 'undefined') {
+    function M7StepCounter(){};
+
+    M7StepCounter.prototype.isAvailable = function(onSuccess) {
+      onSuccess();
+    };
+
+    M7StepCounter.prototype.start = function() {};
+
+    M7StepCounter.prototype.getSteps = function(steps, onSuccess) {
+      onSuccess(Math.round(Math.random() * 10000));
+    };
+  }
+
+
+
   var stepCounter;
 
   function getDate(dayBefore) {
@@ -22,7 +38,7 @@ service('pedometer', [function() {
       return date;
   };
 
-  function getDay(date) {
+  function getWeekday(date) {
     var days = [
       'Sunday',
       'Monday',
@@ -36,14 +52,32 @@ service('pedometer', [function() {
     return days[date.getDay()];
   };
 
-  function addDay(weeklySteps, steps, day) {
-    var date = getDate(day);
-    var day  = getDay(date);
 
-    weeklySteps[day] = steps;
+  function getMonth(date) {
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+    return months[date.getMonth()];
   };
 
+
+  function getDay(date) {
+    return date.getDate();
+  };
+
+
+  function addDay(weeklySteps, steps, day) {
+    var date = getDate(day);
+
+    weeklySteps.push({
+      weekday: getWeekday(date),
+      day: getDay(date),
+      month: getMonth(date),
+      steps: steps
+    })
+  };
+ 
   return {
+
       initialize: function(onSuccess, onError) {       
           stepCounter = new M7StepCounter();
           stepCounter.isAvailable(onSuccess, onError);
@@ -66,7 +100,7 @@ service('pedometer', [function() {
       },
 
       getLastweekSteps: function(onSuccess, onError) {
-          var weeklySteps = {};
+          var weeklySteps = [];
           
           
           var getDayOne = function(steps) {
