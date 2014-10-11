@@ -4,8 +4,20 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="item in items">
-        {{item.title}}
+      <ion-item ng-repeat="item in items" class="progress-day">
+        <div class="progress-day-date">
+          <span class="weekday">Mon</span>
+          <span class="day">13</span>
+          <span class="month">Oct</span>
+        </div>
+        <div class="progress-day-result">
+          <span class="smiley"></span>
+          <span class="donation">50p</span>
+        </div>
+        <div class="progress-day-steps">
+          2038
+        </div>
+        <!-- {{item.title}} -->
       </ion-item>
     </ion-list>
   </ion-content>
