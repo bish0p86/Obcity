@@ -35,6 +35,7 @@ angular.module('starter.controllers', [
 
     pedometer.getLastweekSteps(8, function(data){
       $scope.items = data;
+      $scope.predicate = '-day';
     });
     
   });

@@ -120,10 +120,9 @@ service('pedometer', [function() {
             addDay(weeklySteps, steps, day);
 
             if (weeklySteps.length == max) {
+
               onSuccess(weeklySteps);
-
-              // add today
-
+              
             }
 
           };
