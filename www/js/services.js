@@ -40,13 +40,13 @@ service('pedometer', [function() {
 
   function getWeekday(date) {
     var days = [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday'
+      'Sun',
+      'Mon',
+      'Tues',
+      'Wed',
+      'Thurs',
+      'Fri',
+      'Sat'
     ];
 
     return days[date.getDay()];
@@ -54,7 +54,7 @@ service('pedometer', [function() {
 
 
   function getMonth(date) {
-    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
 
     return months[date.getMonth()];
   };
