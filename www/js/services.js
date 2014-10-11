@@ -23,6 +23,9 @@ service('pedometer', [function() {
       var date = new Date();
 
       date.setDate(date.getDate() - dayBefore);
+
+            console.log(date);
+
       
       var dd = date.getDate();
       var mm = date.getMonth() + 1;
