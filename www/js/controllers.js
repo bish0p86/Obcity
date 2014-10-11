@@ -13,7 +13,17 @@ angular.module('starter.controllers', [
 
   // Perform the login action when the user submits the login form
   $scope.login = function() {
-    window.location.hash = '#/app/dashboard';
+
+    if (localStorage.knownUser == undefined) {
+
+      localStorage.setItem('knownUser', 'true');
+
+      window.location.hash = '#/app/setup';
+
+    } else {
+      
+      window.location.hash = '#/app/dashboard';
+    }
   };
 })
 
