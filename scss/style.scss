@@ -61,8 +61,8 @@ body {
 
 /* VIEW: Progress */
 .progress-day {
-    padding: 0px 10px 0px 11px;
-    height: 60px;
+    padding: 5px 10px 5px 11px;
+    height: 70px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     background-color: #f5f0ec;
@@ -80,14 +80,14 @@ body {
     float: left;
     text-transform: uppercase;
     .weekday {
-        font-size: 8px;
+        font-size: 10px;
         display: block;
         text-align: center;
         font-weight: 600;
     }
     .day {
-        margin: -1px 0px 1px 0px;
-        font-size: 30px;
+        margin: 1px 0px 3px 0px;
+        font-size: 34px;
         display: block;
         text-align: center;
         font-weight: 100;
@@ -99,53 +99,47 @@ body {
         font-weight: 600;
     }
 }
+
 .progress-day-result {
-    width: 36px;
+    width: 40px;
+    height: 100%;
     float: right;
-    padding-top: 8px;
-    .good {
+    padding-top: 6px;
+    margin-right: 8px;
+    .result-badge {
         color: white;
-        width: 35px;
-        height: 41px;
+        width: 40px;
+        height: 46px;
         display: block;
         text-align: center;
-        padding-top: 8px;
-        background-image: url('../img/icon-bg-blue.png');
-        background-size: 35px 41px;
+        padding-top: 12px;
+        background-size: 40px 46px;
         background-repeat: no-repeat;
-        background-position: right center;
+        background-position: center center;
+    }
+    .good {
+        background-image: url('../img/icon-bg-blue2.png');
         font-size: 20px;
     }
     .bad {
-        color: white;
-        width: 35px;
-        height: 41px;
-        display: block;
-        text-align: center;
-        padding-top: 10px;
         background-image: url('../img/icon-bg-red.png');
-        background-size: 35px 41px;
-        background-repeat: no-repeat;
-        background-position: right center;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 700;
     }
 }
 .progress-day-steps {
-    width: 50px;
+    width: 60px;
     height: 100%;
     float: right;
-    margin-right: 3px;
-    padding-top: 10px;
-    font-size: 20px;
-    font-size: 14px;
+    margin-right: 15px;
+    padding-top: 12px;
     text-align: right;
 
     .num-of-steps {
         display: block;
-        margin-top: 2px;
-        margin-bottom: -5px;
-        font-size: 14px;
+        margin-top: 1px;
+        margin-bottom: -1px;
+        font-size: 26px;
         text-align: center;
         font-weight: 700;
     }
@@ -155,6 +149,5 @@ body {
         font-size: 10px;
         text-align: center;
     }
-
 }
 
