@@ -48,8 +48,8 @@ body {
 
 /* VIEW: Progress */
 .progress-day {
-  padding: 5px 10px 5px 11px;
-  height: 70px;
+  padding: 4px 10px 5px 11px;
+  height: 72px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   background-color: #f5f0ec;
@@ -84,7 +84,7 @@ body {
   width: 40px;
   height: 100%;
   float: right;
-  padding-top: 6px;
+  padding-top: 8px;
   margin-right: 8px; }
   .progress-day-result .result-badge {
     color: white;
@@ -105,11 +105,10 @@ body {
     font-weight: 700; }
 
 .progress-day-steps {
-  width: 60px;
   height: 100%;
   float: right;
   margin-right: 15px;
-  padding-top: 12px;
+  padding-top: 15px;
   text-align: right; }
   .progress-day-steps .num-of-steps {
     display: block;
@@ -123,3 +122,5 @@ body {
     text-transform: uppercase;
     font-size: 10px;
     text-align: center; }
+
+/* VIEW: Setup */
