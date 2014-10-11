@@ -1,4 +1,4 @@
-<ion-view title="dashboard">
+<ion-view title="Your Progress">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
@@ -6,13 +6,13 @@
     <ion-list>
       <ion-item ng-repeat="item in items" class="progress-day">
         <div class="progress-day-date">
-          <span class="weekday">Mon</span>
-          <span class="day">13</span>
-          <span class="month">Oct</span>
+          <span class="weekday">{{item.weekday}}</span>
+          <span class="day">{{item.date}}</span>
+          <span class="month">{{item.month}}</span>
         </div>
         <div class="progress-day-result">
-          <span class="smiley"></span>
-          <span class="donation">50p</span>
+          <span class="smiley">{{item.success}}</span>
+          <span class="donation">{{item.donation}}</span>
         </div>
         <div class="progress-day-steps">
           2038

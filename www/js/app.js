@@ -43,8 +43,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/login",
       views: {
         'menuContent' :{
-          templateUrl: "templates/login.html",
-          controller: 'AppCtrl'
+          templateUrl: "templates/login.html"
         }
       }
     })

@@ -1,33 +1,51 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope) {
   // Form data for the login modal
   $scope.loginData = {};
 
 
   $scope.isLogin = function(){
+    console.log($scope.loginData);
     return Object.keys($scope.loginData).length > 0;
   };
 
   // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    //console.log('Doing login', $scope.loginData);
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
+  $scope.login = function() {
+    window.location.hash = '#/app/dashboard';
+
   };
 })
 
 .controller('DashboardCtrl', function($scope) {
   $scope.items = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+    { 
+      id:1,
+      weekday: 'Mon',
+      date: '13',
+      month: 'Oct',
+      steps: '2000',
+      donation: '50p',
+      success: true
+    },
+    { 
+      id:1,
+      weekday: 'Tues',
+      date: '14',
+      month: 'Oct',
+      steps: '2100',
+      donation: '£1',
+      success: false
+    },
+    { 
+      id:1,
+      weekday: 'Wed',
+      date: '15',
+      month: 'Oct',
+      steps: '2020',
+      donation: '£1',
+      success: true
+    },
   ];
 })
 
