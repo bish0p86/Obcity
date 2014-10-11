@@ -40,13 +40,13 @@ service('pedometer', [function() {
 
   function getWeekday(date) {
     var days = [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday'
+      'Sun',
+      'Mon',
+      'Tues',
+      'Wed',
+      'Thurs',
+      'Fri',
+      'Sat'
     ];
 
     return days[date.getDay()];
