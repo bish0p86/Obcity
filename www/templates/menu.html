@@ -13,13 +13,16 @@
     <ion-content class="has-header">
       <ion-list>
         <ion-item nav-clear menu-close href="#/app/dashboard" class="menu-item">
-          Dashboard
+          <span class="menu-item-icon ion-arrow-graph-up-right"></span>
+          Progress
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/settings" class="menu-item">
+          <span class="menu-item-icon ion-gear-b"></span>
           Settings
         </ion-item>
         <ion-item nav-clear menu-close login-item ng-hide="isLogin()" href="#/app/login" class="menu-item">
-          Login
+          <span class="menu-item-icon ion-log-out"></span>
+          Logout
         </ion-item>
       </ion-list>
     </ion-content>
