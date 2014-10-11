@@ -20,11 +20,8 @@
           <span class="menu-item-icon ion-gear-b"></span>
           Settings
         </ion-item>
-        <ion-item nav-clear menu-close login-item ng-hide="isLogin()" href="#/app/login" class="menu-item">
+        <ion-item nav-clear menu-close login-item ng-show="isLogin()" href="#/app/login" class="menu-item">
           <span class="menu-item-icon ion-log-out"></span>
-          Logout
-        </ion-item>
-        <ion-item nav-clear menu-close login-item href="#/app/logout" class="menu-item">
           Logout
         </ion-item>
       </ion-list>
