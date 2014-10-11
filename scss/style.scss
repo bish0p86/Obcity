@@ -1,0 +1,43 @@
+/* dashboard */
+.progress-day {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.progress-day-date {
+    width: 30px;
+    float: left;
+    .weekday {
+        font-size: 10px;
+        display: block;
+        text-align: center;
+    }
+    .day {
+        font-size: 24px;
+        display: block;
+        text-align: center;
+    }
+    .month {
+        font-size: 10px;
+        display: block;
+        text-align: center;
+    }
+}
+.progress-day-result {
+    width: 50px;
+    float: right;
+    .smiley {
+
+    }
+    .donation {
+        color: red;
+        font-weight: bold;
+        font-size: 24px;
+        text-align: right;
+    }
+}
+.progress-day-steps {
+    width: 50px;
+    float: right;
+    font-size: 20px;
+}
+
