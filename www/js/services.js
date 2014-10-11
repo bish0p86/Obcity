@@ -1,8 +1,8 @@
 angular.module('starter.services', []).
 
 service('pedometer', [function() {
-  if (typeof window.M7StepCounter === 'undefined') {
-    function M7StepCounter(){};
+  if (window.M7StepCounter === undefined) {
+    window.M7StepCounter = function(){};
 
     M7StepCounter.prototype.isAvailable = function(onSuccess) {
       onSuccess();
@@ -99,42 +99,22 @@ service('pedometer', [function() {
           stepCounter.getSteps(0, onSuccess, onError);
       },
 
-      getLastweekSteps: function(onSuccess, onError) {
+      getLastweekSteps: function(max, onSuccess, onError) {
           var weeklySteps = [];
-          
-          
-          var getDayOne = function(steps) {
-              addDay(weeklySteps, steps, 1);
 
-              stepCounter.getSteps(2, getDayTwo, onError);
-          };
-          var getDayTwo = function(steps) {
-              addDay(weeklySteps, steps, 2);
+          function onDaySuccess(day, steps) {
+            addDay(weeklySteps, steps, day);
 
-              stepCounter.getSteps(3, getDayThree, onError);
-          };
-          var getDayThree = function(steps) {
-              addDay(weeklySteps, steps, 3);
-
-              stepCounter.getSteps(4, getDayFour, onError);
-          };
-          var getDayFour = function(steps) {
-              addDay(weeklySteps, steps, 4);
-
-              stepCounter.getSteps(5, getDayFive, onError);
-          };
-          var getDayFive = function(steps) {
-              addDay(weeklySteps, steps, 5);
-
-              stepCounter.getSteps(6, getDaySix, onError);
-          };
-          var getDaySix = function(steps) {
-              addDay(weeklySteps, steps, 6);
-
+            if (weeklySteps.length == max) {
               onSuccess(weeklySteps);
+            }
           };
 
-          stepCounter.getSteps(1, getDayOne, onError);
+          for (var day = 1; day <= max; day++) {
+              stepCounter.getSteps(day, function(steps) {
+                onDaySuccess(day, steps);
+              });
+          };
       }
   };
 
