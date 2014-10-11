@@ -8,7 +8,9 @@ Paypal - BattleHack London 2014
 
 ## Installation
 
-    npm install -g cordova
-    npm install -g ionic
+    sudo npm install -g cordova
+    sudo npm install -g ionic
     npm install -g ios-sim
     npm install -g ios-deploy
+
+    cordova platform add ios
