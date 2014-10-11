@@ -7,19 +7,19 @@
   </ion-pane>
 
   <ion-side-menu side="left">
-    <header class="bar bar-header bar-stable">
+    <header class="bar bar-header bar-stable bar-header-menu">
       <h1 class="title nav-title">Menu</h1>
     </header>
     <ion-content class="has-header">
       <ion-list>
-        <ion-item nav-clear menu-close login-item ng-hide="isLogin()" href="#/app/login">
-          Login
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/dashboard">
+        <ion-item nav-clear menu-close href="#/app/dashboard" class="menu-item">
           Dashboard
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/settings">
+        <ion-item nav-clear menu-close href="#/app/settings" class="menu-item">
           Settings
+        </ion-item>
+        <ion-item nav-clear menu-close login-item ng-hide="isLogin()" href="#/app/login" class="menu-item">
+          Login
         </ion-item>
       </ion-list>
     </ion-content>

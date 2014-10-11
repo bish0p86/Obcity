@@ -10,6 +10,10 @@ body {
 }
 
 /* Menu */
+.bar.bar-header-menu {
+    background-color: #3b3b3b;
+    border: none;
+}
 .menu .scroll-content {
     background-color: #3b3b3b;
 }
@@ -18,13 +22,23 @@ body {
     color: white;
     border: none;
 }
-.item .item-complex {
+.menu-item {
     border: none;
 }
 
+
+
+
 /* Header */
-.bar.bar-stable {
-    background-color: #13c5ad;
+.bar-stable .button {
+    color: white;
+    &:hover {
+        color: white;
+    }
+}
+.bar.nav-bar {
+    background: -webkit-linear-gradient(top,  #13c5ad 0%,#0e8c8a 100%); /* Chrome10+,Safari5.1+ */
+
     .title {
         font-family: 'Lobster', cursive;
         color: white;
