@@ -20,10 +20,11 @@ service('pedometer', [function() {
   var stepCounter;
 
   function getDate(dayBefore) {
+      
       var date = new Date();
 
       date.setDate(date.getDate() - dayBefore);
-      
+     
       var dd = date.getDate();
       var mm = date.getMonth() + 1;
       
@@ -54,7 +55,20 @@ service('pedometer', [function() {
 
 
   function getMonth(date) {
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+    var months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sept',
+      'Oct',
+      'Nov',
+      'Dec'
+    ];
 
     return months[date.getMonth()];
   };
@@ -106,14 +120,17 @@ service('pedometer', [function() {
             addDay(weeklySteps, steps, day);
 
             if (weeklySteps.length == max) {
+
               onSuccess(weeklySteps);
+              
             }
+
           };
 
           for (var day = 1; day <= max; day++) {
-              stepCounter.getSteps(day, function(steps) {
-                onDaySuccess(day, steps);
-              });
+              stepCounter.getSteps(day, (function(steps) {
+                onDaySuccess(this, steps);
+              }).bind(day));
           };
       }
   };

@@ -4,7 +4,8 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="item in items" class="progress-day">
+      <ion-item ng-repeat="item in items | orderBy:predicate:reverse" class="progress-day">
+
         <div class="progress-day-date">
           <span class="weekday">{{item.weekday}}</span>
           <span class="day">{{item.day}}</span>
