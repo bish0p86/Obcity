@@ -7,6 +7,10 @@ body {
   background-color: #edebec; }
 
 /* Menu */
+.bar.bar-header-menu {
+  background-color: #3b3b3b;
+  border: none; }
+
 .menu .scroll-content {
   background-color: #3b3b3b; }
 
@@ -15,13 +19,19 @@ body {
   color: white;
   border: none; }
 
-.item .item-complex {
+.menu-item {
   border: none; }
 
 /* Header */
-.bar.bar-stable {
-  background-color: #13c5ad; }
-  .bar.bar-stable .title {
+.bar-stable .button {
+  color: white; }
+  .bar-stable .button:hover {
+    color: white; }
+
+.bar.nav-bar {
+  background: -webkit-linear-gradient(top, #13c5ad 0%, #0e8c8a 100%);
+  /* Chrome10+,Safari5.1+ */ }
+  .bar.nav-bar .title {
     font-family: 'Lobster', cursive;
     color: white;
     font-size: 20px; }
