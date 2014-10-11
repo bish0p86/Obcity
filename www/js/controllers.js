@@ -23,7 +23,7 @@ angular.module('starter.controllers', [
   pedometer.initialize(function(){
     pedometer.start();
 
-    pedometer.getLastweekSteps(function(data){
+    pedometer.getLastweekSteps(10, function(data){
       console.log(data);
       $scope.items = data;
     });
