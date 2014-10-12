@@ -33,12 +33,13 @@ angular.module('starter.controllers', [
     $scope.session = new Session(userDetails);
     $scope.session.$save(function(response) {
 
-      // on success
-      if (localStorage.knownUser == undefined) {
+
+    // on success
+    if (localStorage.knownUser == undefined) {
       localStorage.setItem('knownUser', 'true');
       window.location.hash = '#/app/setup';
     } else {
-      window.location.hash = '#/app/dashboard';
+      window.location.hash = '#/app/progress';
     }
 
   }, function(){
@@ -105,7 +106,7 @@ angular.module('starter.controllers', [
       $scope.items = data;
       $scope.predicate = '-day';
     });
-    
+
   });
 })
 
