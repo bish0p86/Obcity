@@ -168,11 +168,11 @@ body {
   display: block;
   margin-top: -5px; }
 
-
-.login-text{
+.login-text {
   text-align: center;
-  margin:60px 0px;
-}
+  margin: 60px 0px; }
 
-.login-error{
-}
+.main-logo {
+  text-align: center;
+  width: 100%;
+  padding: 80px 0 80px; }

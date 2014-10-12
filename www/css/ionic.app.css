@@ -81,19 +81,10 @@ $dark:                            #444 !default;
   100% {
     transform: rotate(359deg); } }
 
-
 .ion-loading-a {
   -webkit-animation-timing-function: steps(8, start);
   -moz-animation-timing-function: steps(8, start);
   animation-timing-function: steps(8, start); }
-
-
-
-
-
-
-
-
 
 .ion-alert:before {
   content: "\f101"; }
@@ -3737,7 +3728,6 @@ a.subdued {
   pointer-events: none; }
 
 /** Platform styles **/
-
 .tab-item.tab-item-android {
   border-top: 2px solid inherit; }
 
@@ -6893,7 +6883,6 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     animation-fill-mode: both; }
-
 
 .slide-out-left-add {
   -webkit-transform: translate3d(0, 0, 0);

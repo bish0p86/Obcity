@@ -11,6 +11,7 @@ angular.module('starter.controllers', [
     return Object.keys($scope.loginData).length > 0;
   };
 
+
   // Perform the login action when the user submits the login form
   $scope.login = function() {
 
@@ -32,22 +33,18 @@ angular.module('starter.controllers', [
     $scope.session = new Session(userDetails);
     $scope.session.$save(function(response) {
 
-      console.log(response);
-
       // on success
       if (localStorage.knownUser == undefined) {
-        localStorage.setItem('knownUser', 'true');
-        window.location.hash = '#/app/setup';
-      } else {
-        window.location.hash = '#/app/dashboard';
-      }
+      localStorage.setItem('knownUser', 'true');
+      window.location.hash = '#/app/setup';
+    } else {
+      window.location.hash = '#/app/dashboard';
+    }
 
-    }, function(){
-      
-      $scope.hasError = true;
-
-      return false;
-    });
+  }, function(){
+    $scope.hasError = true;
+    return false;
+  });
 
   }
 
@@ -90,12 +87,11 @@ angular.module('starter.controllers', [
       logInUser(username, password);
 
     }, function(err) {
-      // there was an error
+      $scope.hasSignupError = true;
       console.log('error', err);
     });
 
   }
-
 
 })
 
@@ -113,5 +109,11 @@ angular.module('starter.controllers', [
   });
 })
 
+
+
+
+
 .controller('DashboardItemCtrl', function($scope, $stateParams) {
+
+
 });

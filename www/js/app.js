@@ -8,6 +8,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource', 'starte
 
 .run(function($ionicPlatform, Session) {
 
+
   // Check if a user is logged in, if not, redirect them.
   var session = Session.query().$promise.then(function(d){
     // user is logged in.
@@ -123,6 +124,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource', 'starte
         }
       }
     });
+    
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/welcome');
 });
