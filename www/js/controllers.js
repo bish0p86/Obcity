@@ -132,12 +132,15 @@ angular.module('starter.controllers', [
 })
 
 
-.controller('Setup3Ctrl', function($scope, Transaction) {
-  Transaction.authorize().$promise.then(function(transaction){
-    $scope.complete = function() {
-      window.location = transaction.url;
-    }
-  });
+.controller('Setup3Ctrl', function(
+  $scope,
+  PayPalConfig
+) {
+  var clientIDs = {
+    "PayPalEnvironmentProduction": PayPalConfig.production,
+    "PayPalEnvironmentSandbox": PayPalConfig.sandbox
+  };
+  PayPalMobile.init(clientIDs, app.onPayPalMobileInit);
 })
 
 
