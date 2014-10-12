@@ -39,11 +39,20 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
-    .state('app.setup', {
-      url: "/setup",
+    .state('app.setup1', {
+      url: "/setup1",
       views: {
         'menuContent' :{
-          templateUrl: "templates/setup.html"
+          templateUrl: "templates/setup1.html"
+        }
+      }
+    })
+
+    .state('app.setup2', {
+      url: "/setup2",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/setup2.html"
         }
       }
     })
