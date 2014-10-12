@@ -134,10 +134,10 @@ service('pedometer', [function() {
   };
 
 }]).factory('User', function($resource) {
-  return $resource('http://localhost:8888/user/:id'); 
+  return $resource('http://obcity.herokuapp.com/user/:id'); 
 }).factory('Session', ['$resource', function($resource) {
   
-  return $resource('http://localhost:8888/session/:id', {}, {
+  return $resource('http://obcity.herokuapp.com/session/:id', {}, {
       query: {method:'GET', isArray:false, withCredentials:true},
       create: {method:'POST', withCredentials:true}
   }); 
