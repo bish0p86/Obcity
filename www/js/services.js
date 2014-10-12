@@ -148,29 +148,29 @@ service('pedometer', [function() {
 
 }])
 
-.factory('Charity', function($resource) {
-  return $resource('http://obcity.herokuapp.com/charity/:id');
+.factory('Charity', function($resource, api) {
+  return $resource(api + '/charity/:id');
 })
 
-.factory('Challenge', function($resource) {
-  return $resource('http://obcity.herokuapp.com/challenge/:id', {}, {
+.factory('Challenge', function($resource, api) {
+  return $resource(api + '/challenge/:id', {}, {
     query: { method:'GET', withCredentials: true },
     create: { method: 'POST', withCredentials: true }
   });
 })
 
-.factory('Activity', function($resource) {
-  return $resource('http://obcity.herokuapp.com/activity/:id', {}, {
+.factory('Activity', function($resource, api) {
+  return $resource(api + '/activity/:id', {}, {
     query: { method:'GET', withCredentials: true },
     create: { method: 'POST', withCredentials: true }
   });
 })
 
-.factory('Transaction', function($resource) {
-  return $resource('http://obcity.herokuapp.com/transaction/:id', {}, {
+.factory('Transaction', function($resource, api) {
+  return $resource(api + '/transaction/:id', {}, {
     query: { method: 'GET', withCredentials: true },
     authorize: {
-      url: 'http://obcity.herokuapp.com/transaction/authorize',
+      url: api + '/transaction/authorize',
       method: 'GET',
       withCredentials: true
     },
