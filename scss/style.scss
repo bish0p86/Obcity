@@ -11,7 +11,7 @@ body {
     color: #3b3b3b;
 }
 
-.button-block {
+button.button-block, a.button-block {
     width: 150px;
     padding: 0 20px;
     margin: 0 auto;
@@ -36,6 +36,16 @@ body {
     border-bottom: solid 3px #313131;
     &:last-child {
         border-bottom: none;
+    }
+    .item-content {
+        color: white;
+        background-color: #3b3b3b;
+        &:focus, &:hover, &:active {
+            background-color: #3b3b3b;
+        }
+        span {
+            color: white;
+        }
     }
 }
 .menu-item-icon {
@@ -176,15 +186,18 @@ body {
 .setup-step {
     text-align: center;
     width: 100%;
-    padding-top: 30px;
+    padding: 15px 10px 0px 10px;
     h3 {
         margin-bottom: -5px;
         color: #3b3b3b;
+        font-weight: 100;
+        font-size: 32px;
     }
     h5 {
         margin-bottom: -5px;
         font-size: 12px;
         color: #3b3b3b;
+        font-size: 700;
     }
 }
 .row-max-width {
@@ -193,6 +206,9 @@ body {
 .slider-figure {
     display: block;
     margin-top: -5px;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .login-text{
@@ -218,10 +234,11 @@ label.item {
     bottom: 0px;
     left: 50%;
     margin-left: -28px;
-    width: 56px;
+    width: 58px;
     /*background-color: red;*/
     span {
         margin-right: 5px;
+        color: #3b3b3b;
         &:last-child {
             margin-right: none;
         }
