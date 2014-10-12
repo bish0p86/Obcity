@@ -37,7 +37,7 @@ angular.module('starter.controllers', [
     // on success
     if (localStorage.knownUser == undefined) {
       localStorage.setItem('knownUser', 'true');
-      window.location.hash = '#/app/setup';
+      window.location.hash = '#/app/setup1';
     } else {
       window.location.hash = '#/app/progress';
     }
