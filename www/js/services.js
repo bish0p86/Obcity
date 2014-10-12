@@ -20,14 +20,14 @@ service('pedometer', [function() {
   var stepCounter;
 
   function getDate(dayBefore) {
-      
+
       var date = new Date();
 
       date.setDate(date.getDate() - dayBefore);
-     
+
       var dd = date.getDate();
       var mm = date.getMonth() + 1;
-      
+
       if (dd < 10) {
         dd = '0'+dd;
       }
@@ -89,10 +89,10 @@ service('pedometer', [function() {
       steps: steps
     })
   };
- 
+
   return {
 
-      initialize: function(onSuccess, onError) {       
+      initialize: function(onSuccess, onError) {
           stepCounter = new M7StepCounter();
           stepCounter.isAvailable(onSuccess, onError);
       },
@@ -134,12 +134,12 @@ service('pedometer', [function() {
   };
 
 }]).factory('User', function($resource) {
-  return $resource('http://obcity.herokuapp.com/user/:id'); 
+  return $resource('http://obcity.herokuapp.com/user/:id');
 }).factory('Session', ['$resource', function($resource) {
-  
+
   return $resource('http://obcity.herokuapp.com/session/:id', {}, {
       query: {method:'GET', isArray:false, withCredentials:true},
       create: {method:'POST', withCredentials:true}
-  }); 
+  });
 
 }]);
