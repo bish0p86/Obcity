@@ -10,7 +10,17 @@ body {
     background-color: #edebec;
     color: #3b3b3b;
 }
-
+.logo {
+    text-indent: -9999px;
+    background-image: url('../img/obcity-logo.png');
+    width: 100px;
+    height: 85px;
+    margin: 20px auto 20px auto!important;
+    display: block;
+    text-align: center;
+    background-size: 100px 85px;
+    background-repeat: no-repeat;
+}
 button.button-block, a.button-block {
     width: 150px;
     padding: 0 20px;
@@ -88,7 +98,7 @@ button.button-block, a.button-block {
 
 
 /* VIEWS */
-.setup-page, .login-page, .settings-page {
+.setup-page, .login-page, .settings-page, .welcome-page {
     background: #ffffff; /* Old browsers */
     background: -moz-radial-gradient(center, ellipse cover,  #ffffff 0%, #fff9f9 34%, #e0c8b8 100%); /* FF3.6+ */
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(34%,#fff9f9), color-stop(100%,#e0c8b8)); /* Chrome,Safari4+ */
@@ -102,6 +112,13 @@ button.button-block, a.button-block {
     background-color: #f5f0ec;
 }
 
+/* VIEW: Welcome */
+.welcome-page {
+    p {
+        text-align: center;
+        padding: 0px 10px;
+    }
+}
 
 /* VIEW: Progress */
 .progress-day {
