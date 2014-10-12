@@ -167,3 +167,9 @@ body {
 .slider-figure {
   display: block;
   margin-top: -5px; }
+
+
+.login-text{
+  text-align: center;
+  margin:60px 0px;
+}
