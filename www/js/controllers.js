@@ -6,6 +6,12 @@ angular.module('starter.controllers', [
   // Form data for the login modal
   $scope.loginData = {};
   $scope.registerData = {};
+  $scope.challengeData = {
+    goal: 12500,
+    duration: 16,
+    penality: 55,
+    charity: 'Diabetes UK'
+  }
 
   $scope.isLogin = function(){
     return Object.keys($scope.loginData).length > 0;
