@@ -88,7 +88,7 @@ button.button-block, a.button-block {
 
 
 /* VIEWS */
-.setup-page, .login-page {
+.setup-page, .login-page, .settings-page {
     background: #ffffff; /* Old browsers */
     background: -moz-radial-gradient(center, ellipse cover,  #ffffff 0%, #fff9f9 34%, #e0c8b8 100%); /* FF3.6+ */
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(34%,#fff9f9), color-stop(100%,#e0c8b8)); /* Chrome,Safari4+ */
@@ -289,10 +289,11 @@ label.item {
     }
 }
 
-/*
-    .card, .list-inset {
-        background-color: transparent!important;
-        .item {
-            background-color: transparent!important;
+.settings-page {
+    .setup-step {
+        padding: 5px 0px 0px 0px;
+        h3 {
+            font-size: 22px;
         }
-    }*/
+    }
+}

@@ -2,8 +2,63 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  
-  <ion-content class="has-header">
-    <h1>Settings</h1>
+
+  <ion-content class="has-header settings-page">
+
+    <div class="setup-step setup-1">
+        <div class="row">
+          <div class="row-max-width">
+            <h3>Steps</h3>
+            <div class="range range-positive">
+              <input type="range" name="steps">
+            </div>
+            <div class="slider-figure">(5000)</div>
+          </div>
+        </div>
+    </div>
+
+    <div class="setup-step setup-2">
+        <div class="row">
+          <div class="row-max-width">
+            <h3>Duration</h3>
+            <div class="range range-positive">
+              <input type="range" name="steps">
+            </div>
+            <div class="slider-figure">(4 weeks)</div>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="setup-step setup-3">
+        <div class="row">
+          <div class="row-max-width">
+            <h3>Penalty</h3>
+            <div class="range range-positive">
+              <input type="range" name="penalty">
+            </div>
+            <div class="slider-figure">(£1)</div>
+          </div>
+        </div>
+    </div>
+
+    <div class="setup-step setup-4">
+        <div class="row">
+          <div class="row-max-width">
+            <h3>Charity</h3>
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Charity
+                </div>
+                <select>
+                  <option>British Heart Foundation</option>
+                  <option selected>Diabetes UK</option>
+                  <option>Cancer Research</option>
+                </select>
+              </label>
+          </div>
+        </div>
+    </div>
+
   </ion-content>
 </ion-view>
