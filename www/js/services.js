@@ -133,13 +133,46 @@ service('pedometer', [function() {
       }
   };
 
-}]).factory('User', function($resource) {
+}])
+
+.factory('User', function($resource) {
   return $resource('http://obcity.herokuapp.com/user/:id');
-}).factory('Session', ['$resource', function($resource) {
+})
+
+.factory('Session', ['$resource', function($resource) {
 
   return $resource('http://obcity.herokuapp.com/session/:id', {}, {
-      query: {method:'GET', isArray:false, withCredentials:true},
-      create: {method:'POST', withCredentials:true}
+    query: { method:'GET', isArray: false, withCredentials: true },
+    create: { method:'POST', withCredentials: true}
   });
 
-}]);
+}])
+
+.factory('Charity', function($resource, api) {
+  return $resource(api + '/charity/:id');
+})
+
+.factory('Challenge', function($resource, api) {
+  return $resource(api + '/challenge/:id', {}, {
+    query: { method:'GET', withCredentials: true },
+    create: { method: 'POST', withCredentials: true }
+  });
+})
+
+.factory('Activity', function($resource, api) {
+  return $resource(api + '/activity/:id', {}, {
+    query: { method:'GET', withCredentials: true },
+    create: { method: 'POST', withCredentials: true }
+  });
+})
+
+.factory('Transaction', function($resource, api) {
+  return $resource(api + '/transaction/:id', {}, {
+    query: { method: 'GET', withCredentials: true },
+    authorize: {
+      url: api + '/transaction/authorize',
+      method: 'GET',
+      withCredentials: true
+    },
+  });
+});

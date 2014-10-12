@@ -22,16 +22,16 @@
       <div class="setup-step setup-4">
         <div class="row">
           <div class="row-max-width">
-              <h3>Charity</h3>
+            <h3>Charity</h3>
             <h5>Choose a charity to donate<br/><br/></h5>
               <label class="item item-input item-select">
                 <div class="input-label">
                   Charity
                 </div>
                 <select ng-model="challengeData.charity">
-                  <option>British Heart Foundation</option>
-                  <option selected>Diabetes UK</option>
-                  <option>Cancer Research</option>
+                  <option ng-selected="{{charity.name == challengeData.charity}}" ng-repeat="charity in charities" value="{{charity.id}}">
+                    {{ charity.name }}
+                  </option>
                 </select>
               </label>
           </div>
@@ -40,7 +40,9 @@
 
     <div class="setup-step button-wrap">
         <div class="row">
-            <a href="#/app/setup3" class="button button-block button-next">Next</a>
+            <a class="button button-block button-next" ng-click="createChallenge()">
+              Next
+            </a>
         </div>
     </div>
 
