@@ -32,6 +32,8 @@ angular.module('starter.controllers', [
     $scope.session = new Session(userDetails);
     $scope.session.$save(function(response) {
 
+      console.log(response);
+
       // on success
       if (localStorage.knownUser == undefined) {
         localStorage.setItem('knownUser', 'true');
@@ -49,6 +51,20 @@ angular.module('starter.controllers', [
 
 
   /**
+   * Log a user out
+   */
+  $scope.logOutUser = function(){
+
+    console.log('loggin out');
+
+    $scope.session.$delete(function(response) {
+      console.log(response);
+    });
+
+  }
+
+
+  /**
    * Sign up a user
    */
   $scope.signup = function() {
@@ -56,17 +72,24 @@ angular.module('starter.controllers', [
     var username = $scope.registerData.username;
     var password = $scope.registerData.password;
 
+    var userDetails = {
+      username: username,
+      password: password
+    }
+
     if (!username || !password) {
+      console.log('no username or password');
       return false; // these fields are required
     }
 
-    $scope.user = new User();
+    $scope.user = new User(userDetails);
     $scope.user.$save(function(response) {
 
       logInUser(username, password);
 
-    }, function() {
+    }, function(err) {
       // there was an error
+      console.log('error', err);
     });
 
   }

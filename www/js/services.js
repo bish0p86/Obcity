@@ -134,7 +134,12 @@ service('pedometer', [function() {
   };
 
 }]).factory('User', function($resource) {
-  return $resource('http://localhost:8888/user/:id'); // Note the full endpoint address
-}).factory('Session', function($resource) {
-  return $resource('http://localhost:8888/session/:id'); // Note the full endpoint address
-});
+  return $resource('http://localhost:8888/user/:id'); 
+}).factory('Session', ['$resource', function($resource) {
+  
+  return $resource('http://localhost:8888/session/:id', {}, {
+      query: {method:'GET', isArray:false, withCredentials:true},
+      create: {method:'POST', withCredentials:true}
+  }); 
+
+}]);
