@@ -67,6 +67,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource', 'starte
       }
     })
 
+    .state('app.setup3', {
+      url: "/setup3",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/setup3.html"
+        }
+      }
+    })
+
+    .state('app.setup-completion', {
+      url: "/setup-completion",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/setup-completion.html"
+        }
+      }
+    })
+
     .state('app.welcome', {
       url: "/welcome",
       views: {
@@ -94,10 +112,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource', 'starte
         }
       }
     })
-    
+
 
     .state('app.logout', {
-      url: "/login",
+      url: "/logout",
       views: {
         'menuContent' :{
           templateUrl: "templates/logout.html"
@@ -105,11 +123,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource', 'starte
       }
     })
 
-    .state('app.dashboard', {
-      url: "/dashboard",
+    .state('app.progress', {
+      url: "/progress",
       views: {
         'menuContent' :{
-          templateUrl: "templates/dashboard.html",
+          templateUrl: "templates/progress.html",
           controller: 'DashboardCtrl'
         }
       }
@@ -124,7 +142,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource', 'starte
         }
       }
     });
-    
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/welcome');
 });

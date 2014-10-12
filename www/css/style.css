@@ -176,3 +176,20 @@ body {
   text-align: center;
   width: 100%;
   padding: 80px 0 80px; }
+
+label.item {
+  background-color: transparent; }
+  label.item select {
+    background-color: transparent; }
+
+.process-bar {
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -28px;
+  width: 56px;
+  /*background-color: red;*/ }
+  .process-bar span {
+    margin-right: 5px; }
+    .process-bar span:last-child {
+      margin-right: none; }

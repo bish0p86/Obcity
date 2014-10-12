@@ -206,3 +206,26 @@ body {
     padding:80px 0 80px;
 }
 
+label.item {
+    background-color: transparent;
+    select {
+        background-color: transparent;
+    }
+}
+
+.process-bar {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    margin-left: -28px;
+    width: 56px;
+    /*background-color: red;*/
+    span {
+        margin-right: 5px;
+        &:last-child {
+            margin-right: none;
+        }
+    }
+}
+
+
