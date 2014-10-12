@@ -66,6 +66,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])
       }
     })
 
+
+    .state('app.signup', {
+      url: "/signup",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/signup.html"
+        }
+      }
+    })
+    
+
     .state('app.logout', {
       url: "/login",
       views: {
