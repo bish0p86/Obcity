@@ -43,7 +43,9 @@ angular.module('starter.controllers', [
       }
 
     }, function(){
-      console.log('wrong info');
+      
+      $scope.hasError = true;
+
       return false;
     });
 
@@ -78,7 +80,7 @@ angular.module('starter.controllers', [
     }
 
     if (!username || !password) {
-      console.log('no username or password');
+      $scope.hasSignupError = true;
       return false; // these fields are required
     }
 

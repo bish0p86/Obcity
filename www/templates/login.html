@@ -3,7 +3,14 @@
   <ion-content>
     <form ng-submit="login()">
       
-  <div class="list padding">
+    <div class="card login-error" ng-show="hasError">
+      <div class="item item-text-wrap">
+        Please enter a valid username and password
+      </div>
+    </div>
+
+    <div class="list padding">
+
     <label class="item item-input">
       <span class="input-label">Username</span>
       <input type="text" ng-model="loginData.username">
