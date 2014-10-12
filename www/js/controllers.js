@@ -2,10 +2,10 @@ angular.module('starter.controllers', [
   'starter.services'
 ])
 
-.controller('AppCtrl', function($scope) {
+.controller('AppCtrl', function($scope, Session, User) {
   // Form data for the login modal
   $scope.loginData = {};
-
+  $scope.registerData = {};
 
   $scope.isLogin = function(){
     return Object.keys($scope.loginData).length > 0;
@@ -14,17 +14,64 @@ angular.module('starter.controllers', [
   // Perform the login action when the user submits the login form
   $scope.login = function() {
 
-    if (localStorage.knownUser == undefined) {
+    var username = $scope.loginData.username;
+    var password = $scope.loginData.password;
 
-      localStorage.setItem('knownUser', 'true');
+    logInUser(username, password);
 
-      window.location.hash = '#/app/setup';
-
-    } else {
-      
-      window.location.hash = '#/app/dashboard';
-    }
   };
+
+
+  var logInUser = function(username, password){
+
+    var userDetails = {
+      username: username,
+      password: password
+    }
+
+    $scope.session = new Session(userDetails);
+    $scope.session.$save(function(response) {
+
+      // on success
+      if (localStorage.knownUser == undefined) {
+        localStorage.setItem('knownUser', 'true');
+        window.location.hash = '#/app/setup';
+      } else {
+        window.location.hash = '#/app/dashboard';
+      }
+
+    }, function(){
+      console.log('wrong info');
+      return false;
+    });
+
+  }
+
+
+  /**
+   * Sign up a user
+   */
+  $scope.signup = function() {
+
+    var username = $scope.registerData.username;
+    var password = $scope.registerData.password;
+
+    if (!username || !password) {
+      return false; // these fields are required
+    }
+
+    $scope.user = new User();
+    $scope.user.$save(function(response) {
+
+      logInUser(username, password);
+
+    }, function() {
+      // there was an error
+    });
+
+  }
+
+
 })
 
 .controller('DashboardCtrl', function($scope, pedometer) {
