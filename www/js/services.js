@@ -120,9 +120,7 @@ service('pedometer', [function() {
             addDay(weeklySteps, steps, day);
 
             if (weeklySteps.length == max) {
-
               onSuccess(weeklySteps);
-              
             }
 
           };
@@ -135,4 +133,8 @@ service('pedometer', [function() {
       }
   };
 
-}]);
+}]).factory('User', function($resource) {
+  return $resource('http://localhost:8888/user/:id'); // Note the full endpoint address
+}).factory('Session', function($resource) {
+  return $resource('http://localhost:8888/session/:id'); // Note the full endpoint address
+});

@@ -2,10 +2,9 @@ angular.module('starter.controllers', [
   'starter.services'
 ])
 
-.controller('AppCtrl', function($scope) {
+.controller('AppCtrl', function($scope, Session) {
   // Form data for the login modal
   $scope.loginData = {};
-
 
   $scope.isLogin = function(){
     return Object.keys($scope.loginData).length > 0;
@@ -17,17 +16,20 @@ angular.module('starter.controllers', [
     var username = $scope.loginData.username;
     var password = $scope.loginData.password;
 
-    // on success
-    if (localStorage.knownUser == undefined) {
+    $scope.session = new Session();
+    $scope.session.$save(function(response) {
 
-      localStorage.setItem('knownUser', 'true');
-      window.location.hash = '#/app/setup';
+      // on success
+      if (localStorage.knownUser == undefined) {
+        localStorage.setItem('knownUser', 'true');
+        window.location.hash = '#/app/setup';
+      } else {
+        window.location.hash = '#/app/dashboard';
+      }
 
-    } else {
-      
-      window.location.hash = '#/app/dashboard';
-    }
-
+    }, function(){
+      console.log('wrong info');
+    });
 
   };
 })
