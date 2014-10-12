@@ -3,7 +3,7 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header progress-page">
-    <div class="progress-end"><span class="text">END</span><span class="ion-chevron-up"></span><span class="dash">l</span><span class="dash">l</span><span class="dash">l</span><span class="end-date">12days</span></div>
+    <div class="progress-end"><span class="text">END</span><span class="ion-chevron-up"></span><span class="end-date">12days</span></div>
     <ion-list>
       <ion-item ng-repeat="item in items | orderBy:predicate:reverse" class="progress-day">
         <div class="progress-day-date">
@@ -21,6 +21,6 @@
         </div>
       </ion-item>
     </ion-list>
-    <div class="progress-start"><span class="ion-chevron-up"></span><span class="dash">l</span><span class="dash">l</span><span class="dash">l</span><span class="text">START</span></div>
+    <div class="progress-start"><span class="ion-chevron-up"></span><span class="text">START</span></div>
   </ion-content>
 </ion-view>
