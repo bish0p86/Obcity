@@ -62,7 +62,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource', 'starte
       url: "/setup2",
       views: {
         'menuContent' :{
-          templateUrl: "templates/setup2.html"
+          templateUrl: "templates/setup2.html",
+          controller: 'Setup2Ctrl'
         }
       }
     })
@@ -71,7 +72,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource', 'starte
       url: "/setup3",
       views: {
         'menuContent' :{
-          templateUrl: "templates/setup3.html"
+          templateUrl: "templates/setup3.html",
+          controller: 'Setup3Ctrl'
         }
       }
     })

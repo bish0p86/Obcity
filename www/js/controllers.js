@@ -38,21 +38,17 @@ angular.module('starter.controllers', [
 
     $scope.session = new Session(userDetails);
     $scope.session.$save(function(response) {
-
-
-    // on success
-    if (localStorage.knownUser == undefined) {
-      localStorage.setItem('knownUser', 'true');
-      window.location.hash = '#/app/setup1';
-    } else {
-      window.location.hash = '#/app/progress';
-    }
-
-  }, function(){
-    $scope.hasError = true;
-    return false;
-  });
-
+      // on success
+      if (localStorage.knownUser == undefined) {
+        localStorage.setItem('knownUser', 'true');
+        window.location.hash = '#/app/setup1';
+      } else {
+        window.location.hash = '#/app/progress';
+      }
+    }, function(){
+      $scope.hasError = true;
+      return false;
+    });
   }
 
 
@@ -118,6 +114,31 @@ angular.module('starter.controllers', [
 
 
 
+.controller('Setup2Ctrl', function($scope, Charity, Challenge) {
+  $scope.charities = [];
+
+  Charity.query().$promise.then(function(charities){
+    $scope.charities = charities;
+  });
+
+  $scope.createChallenge = function() {
+    // TODO:
+    // var challenge = new Challenge($scope.challengeData);
+
+    // challenge.$save().then(function(challenge){
+      window.location.hash = '#/app/setup3';
+    // });
+  };
+})
+
+
+.controller('Setup3Ctrl', function($scope, Transaction) {
+  Transaction.authorize().$promise.then(function(transaction){
+    $scope.complete = function() {
+      window.location = transaction.url;
+    }
+  });
+})
 
 
 .controller('DashboardItemCtrl', function($scope, $stateParams) {
