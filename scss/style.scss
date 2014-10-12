@@ -15,6 +15,15 @@ button.button-block, a.button-block {
     width: 150px;
     padding: 0 20px;
     margin: 0 auto;
+    border: 2px solid #12a5c4;
+    border-bottom: 5px solid #12a5c4;
+    background: #c8fcff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+}
+.button-wrap {
+    margin-top: 20px;
 }
 
 
@@ -78,6 +87,17 @@ button.button-block, a.button-block {
 }
 
 
+/* VIEWS */
+.setup-page, .login-page {
+    background: #ffffff; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  #ffffff 0%, #fff9f9 34%, #e0c8b8 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(34%,#fff9f9), color-stop(100%,#e0c8b8)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 0%,#fff9f9 34%,#e0c8b8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #ffffff 0%,#fff9f9 34%,#e0c8b8 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #ffffff 0%,#fff9f9 34%,#e0c8b8 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #ffffff 0%,#fff9f9 34%,#e0c8b8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0c8b8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
 
 /* VIEW: Progress */
 .progress-day {
@@ -92,8 +112,12 @@ button.button-block, a.button-block {
         background-color: white;
     }
     &:nth-child(7) {
-        border-bottom: 2px solid #ccc;
+        border-bottom: 2px dotted #3b3b3b;
     }
+}
+.progress-day-current {
+    border-top: 2px #12a5c4 solid;
+    border-bottom: 2px #12a5c4 solid;
 }
 .progress-day-date {
     width: 30px;
@@ -170,19 +194,30 @@ button.button-block, a.button-block {
     }
 }
 
+.progress-start {
+    margin: 30px 0px 20px 0px;
+    font-size: 30px;
+    font-weight: 100;
+    text-align: center;
+    span {
+        margin-top: 10px;
+        display: block;
+    }
+}
+.progress-end {
+    margin: 30px 0px 20px 0px;
+    font-size: 30px;
+    font-weight: 100;
+    text-align: center;
+    span {
+        margin-top: 10px;
+        display: block;
+    }
+}
+
 
 
 /* VIEW: Setup */
-.setup-page {
-    background: #ffffff; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  #ffffff 0%, #fff9f9 34%, #e0c8b8 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(34%,#fff9f9), color-stop(100%,#e0c8b8)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 0%,#fff9f9 34%,#e0c8b8 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  #ffffff 0%,#fff9f9 34%,#e0c8b8 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  #ffffff 0%,#fff9f9 34%,#e0c8b8 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  #ffffff 0%,#fff9f9 34%,#e0c8b8 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0c8b8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
 .setup-step {
     text-align: center;
     width: 100%;
@@ -246,3 +281,18 @@ label.item {
 }
 
 
+.login-page {
+    .item {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+    }
+}
+
+/*
+    .card, .list-inset {
+        background-color: transparent!important;
+        .item {
+            background-color: transparent!important;
+        }
+    }*/
