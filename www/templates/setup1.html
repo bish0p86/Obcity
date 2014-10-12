@@ -12,9 +12,11 @@
 		  	<h3>Steps</h3>
 	    	<h5>Set a target amount of steps per day</h5>
 			<div class="range range-positive">
-			  <input type="range" name="steps">
+			  <input type="range" name="steps" step="500" min="1000" value="10000" max="24000" ng-model="challengeData.goal">
 			</div>
-			<div class="slider-figure">(5000)</div>
+			<div class="slider-figure">
+                ({{challengeData.goal}})
+            </div>
 		  </div>
 		</div>
 	</div>
@@ -25,9 +27,9 @@
 		  	<h3>Duration</h3>
 	    	<h5>Set a duration for your programme</h5>
 			<div class="range range-positive">
-			  <input type="range" name="steps">
+			  <input type="range" name="steps" step="1" min="1" max="31" ng-model="challengeData.duration">
 			</div>
-			<div class="slider-figure">(4 weeks)</div>
+			<div class="slider-figure">({{challengeData.duration}} days)</div>
 		  </div>
 		</div>
 	</div>

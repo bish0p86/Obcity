@@ -6,6 +6,12 @@ angular.module('starter.controllers', [
   // Form data for the login modal
   $scope.loginData = {};
   $scope.registerData = {};
+  $scope.challengeData = {
+    goal: 12500,
+    duration: 16,
+    penality: 55,
+    charity: 'Diabetes UK'
+  }
 
   $scope.isLogin = function(){
     return Object.keys($scope.loginData).length > 0;
@@ -37,7 +43,7 @@ angular.module('starter.controllers', [
     // on success
     if (localStorage.knownUser == undefined) {
       localStorage.setItem('knownUser', 'true');
-      window.location.hash = '#/app/setup';
+      window.location.hash = '#/app/setup1';
     } else {
       window.location.hash = '#/app/progress';
     }
