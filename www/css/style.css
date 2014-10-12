@@ -63,6 +63,15 @@ button.button-block, a.button-block {
   display: inline-block;
   margin-right: 5px; }
 
+.menu-item-logout {
+  background-color: #3b3b3b;
+  color: white; }
+  .menu-item-logout:focus, .menu-item-logout:hover, .menu-item-logout:active {
+    border-top: solid 1px #575757;
+    background-color: #3b3b3b; }
+  .menu-item-logout .ion-log-out {
+    color: white; }
+
 /* Header */
 .bar-stable .button {
   color: white; }
@@ -101,6 +110,9 @@ button.button-block, a.button-block {
 
 .progress-page {
   background-color: #f5f0ec; }
+
+.login-page {
+  height: 100%; }
 
 /* VIEW: Welcome */
 .welcome-page p {
